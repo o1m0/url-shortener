@@ -38,7 +38,7 @@ Claudeを使い勉強・理解しながら作成しました。
 
 ## システム構成
 
-\```
+```
 ブラウザ
   ↓
 Next.js（:3000）
@@ -46,35 +46,20 @@ Next.js（:3000）
 Go / Gin（:8080）
   ↓
 PostgreSQL + Redis
-\```
+```
 
 ## セットアップ
 
-**必要な環境**
-- Go 1.21以上
-- Node.js 18以上
-- PostgreSQL
-- Redis
-
 **バックエンド**
-\```bash
+```bash
 cd backend
 cp .env.example .env
 go run main.go
-\```
+```
 
 **フロントエンド**
-\```bash
+```bash
 cd frontend
 npm install
 npm run dev
-\```
-
-## API仕様
-
-| メソッド | エンドポイント | 認証 | 説明 |
-|---|---|---|---|
-| POST | /api/auth/register | 不要 | ユーザー登録 |
-| POST | /api/auth/login | 不要 | ログイン |
-| POST | /api/urls | 必要 | URL短縮 |
-| GET | /:shortCode | 不要 | リダイレクト |
+```
