@@ -34,4 +34,47 @@ Claudeを使い勉強・理解しながら作成しました。
 **PostgreSQL**
 リレーショナルデータの管理とACIDトランザクションの信頼性を重視して選定。
 
+上記の技術を選定した理由に、これらを使った開発を勉強するため。
+
 ## システム構成
+
+\```
+ブラウザ
+  ↓
+Next.js（:3000）
+  ↓
+Go / Gin（:8080）
+  ↓
+PostgreSQL + Redis
+\```
+
+## セットアップ
+
+**必要な環境**
+- Go 1.21以上
+- Node.js 18以上
+- PostgreSQL
+- Redis
+
+**バックエンド**
+\```bash
+cd backend
+cp .env.example .env
+go run main.go
+\```
+
+**フロントエンド**
+\```bash
+cd frontend
+npm install
+npm run dev
+\```
+
+## API仕様
+
+| メソッド | エンドポイント | 認証 | 説明 |
+|---|---|---|---|
+| POST | /api/auth/register | 不要 | ユーザー登録 |
+| POST | /api/auth/login | 不要 | ログイン |
+| POST | /api/urls | 必要 | URL短縮 |
+| GET | /:shortCode | 不要 | リダイレクト |
